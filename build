@@ -1,0 +1,13 @@
+#!/bin/bash
+FILE=compile.js
+rm -f -- $FILE
+
+touch $FILE
+for f in parts/*.js
+do
+  cat "$f" >> $FILE
+  echo "$f"
+done
+
+cat compile.js | pbcopy
+echo "built and copied"
